@@ -132,7 +132,7 @@ class ReflectPlayer(Player):
     def move(self):
         total_move = len(self.opponent_move)
         if total_move == 0:
-            return random.choice(moves)
+            return 'rock'
         elif total_move == 1:
             return self.opponent_move[0]
         else:
@@ -268,7 +268,7 @@ def determine_score(player1, player2):
 
 def start_game():
     """Function that start the game"""
-    player1 = HumanPlayer("Human")
+    player1 = ReflectPlayer()
     player2 = CyclePlayer()
     game = Game(player1, player2)
     game.play_game()
